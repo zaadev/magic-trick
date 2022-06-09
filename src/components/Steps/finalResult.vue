@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="shadow-lg p-10 rounded">
     <p class="text-5xl font-bold mb-9 text-center">Your Guess a Number is</p>
 
@@ -8,4 +8,4 @@
 
 <script>
 
-</script>
+</script> -->

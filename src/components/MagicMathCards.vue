@@ -9,7 +9,7 @@
 
         <div class="text-center">
 
-          <button v-if="currentStep !== 0 && currentStep !== 8" v-on:click="previous" class="text-center p-5 text-5xl mt-4">
+          <button v-if="currentStep !== 0 && currentStep !== 7" v-on:click="previous" class="text-center p-5 text-5xl mt-4">
             <i className="ion-arrow-left-c" />
           </button>
 
@@ -17,9 +17,13 @@
             <i className="ion-arrow-right-c" />
           </button>
 
-          <button v-else class="text-2xl bg-green-300 text-white p-5 rounded" v-on:click="submit">
-            Right
-          </button>
+          <!-- Final result -->
+          <div v-else class="shadow-lg p-10 rounded">            
+            <p class="text-5xl font-bold mb-9 text-center">Your Guess a Number is</p>
+
+            <p class="text-5xl font-bold mb-9 text-center">{{finalResult}}</p>
+          </div>
+         
         </div>
 
       </div>
@@ -45,6 +49,7 @@ export default {
     return {
       currentStep: 0,
       submitted: false,
+      finalResult : 0,
       formValue: {
         firstCard: {
           address: '',
@@ -109,6 +114,31 @@ export default {
   },
   methods: {
     next () {
+
+      if (this.currentStep == 1) {
+        this.finalResult +=32;
+      }
+
+      if (this.currentStep == 2) {
+        this.finalResult +=8;
+      }
+
+      if (this.currentStep == 3) {
+        this.finalResult +=4;
+      }
+
+      if (this.currentStep == 4) {
+        this.finalResult +=2;
+      }
+
+      if (this.currentStep == 5) {
+        this.finalResult +=16;
+      }
+
+      if (this.currentStep == 6) {
+        this.finalResult +=1;
+      }
+
       this.currentStep += 1;
     },
     previous () {
