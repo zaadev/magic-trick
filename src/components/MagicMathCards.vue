@@ -18,12 +18,20 @@
           </button>
 
           <!-- Final result -->
+<<<<<<< HEAD
           <div v-else class="shadow-lg p-10 rounded">            
+=======
+          <div v-else class="shadow-lg p-10 rounded">
+>>>>>>> c773c00 (Complete magic card process with routers)
             <p class="text-5xl font-bold mb-9 text-center">Your Guess a Number is</p>
 
             <p class="text-5xl font-bold mb-9 text-center">{{finalResult}}</p>
           </div>
+<<<<<<< HEAD
          
+=======
+
+>>>>>>> c773c00 (Complete magic card process with routers)
         </div>
 
       </div>
@@ -34,6 +42,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import guess from './Steps/guess.vue';
 import firstCard from './Steps/firstCard.vue';
 import secondCard from './Steps/secondCard.vue';
@@ -42,6 +51,16 @@ import fourthCard from './Steps/fourthCard.vue';
 import fifthCard from './Steps/fifthCard.vue';
 import sixthCard from './Steps/sixthCard.vue';
 import finalResult from './Steps/finalResult.vue';
+=======
+import guessNumber from '../views/guessNumber.vue';
+import firstCard from '../views/firstCard.vue';
+import secondCard from '../views/secondCard.vue';
+import thirdCard from '../views/thirdCard.vue';
+import fourthCard from '../views/fourthCard.vue';
+import fifthCard from '../views/fifthCard.vue';
+import sixthCard from '../views/sixthCard.vue';
+import finalResult from '../views/finalResult.vue';
+>>>>>>> c773c00 (Complete magic card process with routers)
 
 export default {
   name: 'MagicMathCards',
@@ -78,8 +97,13 @@ export default {
       },
       steps: [
         {
+<<<<<<< HEAD
           component: guess,
           label: 'guess'
+=======
+          component: guessNumber,
+          label: 'guessNumber'
+>>>>>>> c773c00 (Complete magic card process with routers)
         },
         {
           component: firstCard,
@@ -96,11 +120,19 @@ export default {
         {
           component: fourthCard,
           label: 'fourthCard'
+<<<<<<< HEAD
         },        
         {
           component: fifthCard,
           label: 'fifthCard'
         },        
+=======
+        },
+        {
+          component: fifthCard,
+          label: 'fifthCard'
+        },
+>>>>>>> c773c00 (Complete magic card process with routers)
         {
           component: sixthCard,
           label: 'sixthCard'
@@ -114,6 +146,7 @@ export default {
   },
   methods: {
     next () {
+<<<<<<< HEAD
 
       if (this.currentStep == 1) {
         this.finalResult +=32;
@@ -140,6 +173,12 @@ export default {
       }
 
       this.currentStep += 1;
+=======
+      this.$router.push({
+        name: 'sixth_step'
+      })
+
+>>>>>>> c773c00 (Complete magic card process with routers)
     },
     previous () {
       this.currentStep += 1;
@@ -156,7 +195,11 @@ export default {
     }
   },
   components: [
+<<<<<<< HEAD
     guess,
+=======
+    guessNumber,
+>>>>>>> c773c00 (Complete magic card process with routers)
     firstCard,
     secondCard,
     thirdCard,
