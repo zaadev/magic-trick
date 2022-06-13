@@ -1,32 +1,4 @@
 <template>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <MagicMathCards />
-</template>
-
-<script>
-import MagicMathCards from './components/MagicMathCards.vue';
-
-=======
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
->>>>>>> a2aa3a4 (init)
-
-export default {
-  name: 'App',
-  components: {
-<<<<<<< HEAD
-    MagicMathCards
-=======
-    HelloWorld
->>>>>>> a2aa3a4 (init)
-  }
-}
-=======
   <router-view name="home"></router-view>
   <router-view />
 
@@ -40,7 +12,6 @@ export default {
       >
         <i className="ion-arrow-left-c" />
       </button>
-
       <!-- next button -->
       <button
         v-if="currentStep !== 7"
@@ -49,7 +20,6 @@ export default {
       >
         <i className="ion-arrow-right-c" />
       </button>
-
     </div>
   </div>
 </template>
@@ -59,8 +29,8 @@ export default {
   name: "MagicMathCards",
   data() {
     return {
-      currentStep: 0,      
-      finalResult: 0
+      currentStep: 0,
+      finalResult: 0,
     };
   },
   methods: {
@@ -164,7 +134,6 @@ export default {
     },
   },
 };
->>>>>>> c773c00 (Complete magic card process with routers)
 </script>
 
 <style>
@@ -172,13 +141,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-<<<<<<< HEAD
-  margin-top: 60px;
-  margin-bottom: 60px;
-=======
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
->>>>>>> a2aa3a4 (init)
 }
 </style>
