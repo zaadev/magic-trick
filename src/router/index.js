@@ -57,4 +57,24 @@ const router = createRouter({
   routes,
 })
 
+
+router.beforeEach((to, from, next) => {  
+  // restriction for first step
+  if (to.name == 'first_step' && from.name != 'home') next({ name: 'home' })
+  // restriction for second step
+  if (to.name == 'second_step' && from.name != 'first_step') next({ name: 'home' })
+  // restriction for third step
+  if (to.name == 'third_step' && from.name != 'second_step') next({ name: 'home' })
+  // restriction for fourth step
+  if (to.name == 'fourth_step' && from.name != 'third_step') next({ name: 'home' })
+  // restriction for fifth step
+  if (to.name == 'fifth_step' && from.name != 'fourth_step') next({ name: 'home' })
+  // restriction for sixth step
+  if (to.name == 'sixth_step' && from.name != 'fifth_step') next({ name: 'home' })
+  // restriction for result page
+  if (to.name == 'final_result' && from.name != 'sixth_step') next({ name: 'home' })
+
+  else next()
+})
+
 export default router
