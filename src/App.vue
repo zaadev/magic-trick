@@ -1,10 +1,530 @@
 <template>
-  <router-view name="home"></router-view>
-  <router-view />
+  <!-- <router-view name="home"></router-view>
+  <router-view /> -->
 
-  <div class="w-1/2 m-auto">
-    <div class="text-center">
-      <!-- previous button -->
+  <swiper @swiper="onSwiper" @slideChange="onSlideChange">
+    <!-- Guess a number -->
+    <swiper-slide>
+      <div class="shadow-lg p-10 rounded">
+        <p class="text-5xl font-bold mb-9 text-center">
+          Guess a Number Between
+        </p>
+
+        <p class="text-4xl font-bold mb-9 text-center">1 to 63</p>
+      </div>
+    </swiper-slide>
+
+    <!-- card-1 -->
+    <swiper-slide>
+      <p class="text-right">2/7</p>
+      <div class="shadow-lg p-10 rounded">
+        <p class="text-5xl font-bold mb-9 text-center">
+          Do you see your number?
+        </p>
+        <p class="font-bold mb-9 text-center">
+          Swipe right for yes, left for no.
+        </p>
+
+        <div
+          class="
+            text-center
+            w-full
+            text-2xl
+            p-2
+            border-2
+            rounded
+            border-green-300
+            mt-4
+            mb-4
+          "
+        >
+          <div class="grid grid-cols-4 gap-4">
+            <div>32</div>
+            <div>33</div>
+            <div>34</div>
+            <div>35</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>36</div>
+            <div>37</div>
+            <div>38</div>
+            <div>39</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>40</div>
+            <div>41</div>
+            <div>42</div>
+            <div>43</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>44</div>
+            <div>45</div>
+            <div>46</div>
+            <div>47</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>48</div>
+            <div>49</div>
+            <div>50</div>
+            <div>51</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>52</div>
+            <div>53</div>
+            <div>54</div>
+            <div>55</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>56</div>
+            <div>57</div>
+            <div>58</div>
+            <div>59</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>60</div>
+            <div>61</div>
+            <div>62</div>
+            <div>63</div>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <!-- card-2  -->
+    <swiper-slide>
+      <p class="text-right">3/7</p>
+      <div class="shadow-lg p-10 rounded">
+        <p class="text-5xl font-bold mb-9 text-center">
+          Do you see your number?
+        </p>
+        <p class="font-bold mb-9 text-center">
+          Swipe right for yes, left for no.
+        </p>
+
+        <div
+          class="
+            text-center
+            w-full
+            text-2xl
+            p-2
+            border-2
+            rounded
+            border-green-300
+            mt-4
+            mb-4
+          "
+        >
+          <div class="grid grid-cols-4 gap-4">
+            <div>08</div>
+            <div>09</div>
+            <div>10</div>
+            <div>11</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>24</div>
+            <div>25</div>
+            <div>26</div>
+            <div>27</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+            <div>31</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>40</div>
+            <div>41</div>
+            <div>42</div>
+            <div>43</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>44</div>
+            <div>45</div>
+            <div>46</div>
+            <div>47</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>56</div>
+            <div>57</div>
+            <div>58</div>
+            <div>59</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>60</div>
+            <div>61</div>
+            <div>62</div>
+            <div>63</div>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <p class="text-right">4/7</p>
+      <div class="shadow-lg p-10 rounded">
+        <p class="text-5xl font-bold mb-9 text-center">
+          Do you see your number?
+        </p>
+        <p class="font-bold mb-9 text-center">
+          Swipe right for yes, left for no.
+        </p>
+
+        <div
+          class="
+            text-center
+            w-full
+            text-2xl
+            p-2
+            border-2
+            rounded
+            border-green-300
+            mt-4
+            mb-4
+          "
+        >
+          <div class="grid grid-cols-4 gap-4">
+            <div>04</div>
+            <div>05</div>
+            <div>06</div>
+            <div>07</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>20</div>
+            <div>21</div>
+            <div>22</div>
+            <div>23</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+            <div>31</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>36</div>
+            <div>37</div>
+            <div>38</div>
+            <div>39</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>44</div>
+            <div>45</div>
+            <div>46</div>
+            <div>47</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>52</div>
+            <div>53</div>
+            <div>54</div>
+            <div>55</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>60</div>
+            <div>61</div>
+            <div>62</div>
+            <div>63</div>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <p class="text-right">4/7</p>
+      <div class="shadow-lg p-10 rounded">
+        <p class="text-5xl font-bold mb-9 text-center">
+          Do you see your number?
+        </p>
+        <p class="font-bold mb-9 text-center">
+          Swipe right for yes, left for no.
+        </p>
+
+        <div
+          class="
+            text-center
+            w-full
+            text-2xl
+            p-2
+            border-2
+            rounded
+            border-green-300
+            mt-4
+            mb-4
+          "
+        >
+          <div class="grid grid-cols-4 gap-4">
+            <div>04</div>
+            <div>05</div>
+            <div>06</div>
+            <div>07</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>20</div>
+            <div>21</div>
+            <div>22</div>
+            <div>23</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+            <div>31</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>36</div>
+            <div>37</div>
+            <div>38</div>
+            <div>39</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>44</div>
+            <div>45</div>
+            <div>46</div>
+            <div>47</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>52</div>
+            <div>53</div>
+            <div>54</div>
+            <div>55</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>60</div>
+            <div>61</div>
+            <div>62</div>
+            <div>63</div>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <p class="text-right">6/7</p>
+      <div class="shadow-lg p-10 rounded">
+        <p class="text-5xl font-bold mb-9 text-center">
+          Do you see your number?
+        </p>
+        <p class="font-bold mb-9 text-center">
+          Swipe right for yes, left for no.
+        </p>
+
+        <div
+          class="
+            text-center
+            w-full
+            text-2xl
+            p-2
+            border-2
+            rounded
+            border-green-300
+            mt-4
+            mb-4
+          "
+        >
+          <div class="grid grid-cols-4 gap-4">
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+            <div>19</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>20</div>
+            <div>21</div>
+            <div>22</div>
+            <div>23</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>24</div>
+            <div>25</div>
+            <div>26</div>
+            <div>27</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+            <div>31</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>48</div>
+            <div>49</div>
+            <div>50</div>
+            <div>51</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>52</div>
+            <div>53</div>
+            <div>54</div>
+            <div>55</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>56</div>
+            <div>57</div>
+            <div>58</div>
+            <div>59</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>60</div>
+            <div>61</div>
+            <div>62</div>
+            <div>63</div>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <p class="text-right">7/7</p>
+      <div class="shadow-lg p-10 rounded">
+        <p class="text-5xl font-bold mb-9 text-center">
+          Do you see your number?
+        </p>
+        <p class="font-bold mb-9 text-center">
+          Swipe right for yes, left for no.
+        </p>
+
+        <div
+          class="
+            text-center
+            w-full
+            text-2xl
+            p-2
+            border-2
+            rounded
+            border-green-300
+            mt-4
+            mb-4
+          "
+        >
+          <div class="grid grid-cols-4 gap-4">
+            <div>01</div>
+            <div>03</div>
+            <div>05</div>
+            <div>07</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>09</div>
+            <div>11</div>
+            <div>13</div>
+            <div>15</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>17</div>
+            <div>19</div>
+            <div>21</div>
+            <div>23</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>25</div>
+            <div>27</div>
+            <div>29</div>
+            <div>31</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>33</div>
+            <div>35</div>
+            <div>37</div>
+            <div>39</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>41</div>
+            <div>43</div>
+            <div>45</div>
+            <div>47</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>49</div>
+            <div>51</div>
+            <div>53</div>
+            <div>55</div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div>57</div>
+            <div>59</div>
+            <div>61</div>
+            <div>63</div>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="shadow-lg p-10 rounded">
+        <p class="text-5xl font-bold mb-9 text-center">
+          Your Guess a Number is
+        </p>
+
+        <p class="text-4xl font-bold mb-9 text-center">
+          <!-- {{ $route.params.result }} -->
+          63
+        </p>
+      </div>
+    </swiper-slide>
+
+  </swiper>
+
+  <!-- <div class="w-1/2 m-auto">
+    <div class="text-center">      
       <button
         v-if="currentStep !== 0 && currentStep !== 7"
         v-on:click="previous"
@@ -12,7 +532,7 @@
       >
         <i className="ion-arrow-left-c" />
       </button>
-      <!-- next button -->
+      
       <button
         v-if="currentStep !== 7"
         v-on:click="next"
@@ -21,12 +541,34 @@
         <i className="ion-arrow-right-c" />
       </button>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
 export default {
   name: "MagicMathCards",
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const onSwiper = (swiper) => {
+      console.log(swiper);
+    };
+    const onSlideChange = () => {
+      console.log("slide change");
+    };
+    return {
+      onSwiper,
+      onSlideChange,
+    };
+  },
   data() {
     return {
       currentStep: 0,
