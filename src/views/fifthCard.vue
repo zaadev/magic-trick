@@ -1,6 +1,6 @@
 <template>
-  <p class="text-right">6/7</p>
-  <div class="shadow-lg p-10 rounded">
+  <div v-touch:swipe="onSwipeItem()" class="shadow-lg p-10 rounded">
+    <p class="text-right">6/7</p>
     <p class="text-5xl font-bold mb-9 text-center">Do you see your number?</p>
     <p class="font-bold mb-9 text-center">Swipe right for yes, left for no.</p>
 
@@ -75,3 +75,33 @@
     </div>
   </div>
 </template>
+
+<script>
+import router from "@/router";
+
+export default {
+  name: "fifthCard",
+  methods: {
+    // handle user swipe directions
+    onSwipeItem() {
+      return function (direction) {
+        console.log("Swiped item in direction ", direction);
+
+        // if user swipe right
+        if (direction == "right") {
+          router.push({
+            name: "sixth_step",
+          });
+        }
+
+        // if user swipe left
+        if (direction == "left") {
+          router.push({
+            name: "sixth_step",
+          });
+        }
+      };
+    },
+  },
+};
+</script>

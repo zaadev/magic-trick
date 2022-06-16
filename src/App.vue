@@ -1,20 +1,21 @@
 <template>
   <!-- <router-view name="home"></router-view>
   <router-view /> -->
-    <router-view></router-view>
+  <router-view v-slot="{ Component }">
+    <transition name="slide-right">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 
-
-  <div class="w-1/2 m-auto">
-    <div class="text-center">
-      <!-- previous button -->
+  <!-- <div class="w-1/2 m-auto">
+    <div class="text-center">      
       <button
         v-if="currentStep !== 0 && currentStep !== 7"
         v-on:click="previous"
         class="text-center p-5 text-5xl mt-4"
       >
         <i className="ion-arrow-left-c" />
-      </button>
-      <!-- next button -->
+      </button>      
       <button
         v-if="currentStep !== 7"
         v-on:click="next"
@@ -23,7 +24,7 @@
         <i className="ion-arrow-right-c" />
       </button>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
