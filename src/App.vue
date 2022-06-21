@@ -2,7 +2,7 @@
   <!-- <router-view name="home"></router-view>
   <router-view /> -->
   <router-view v-slot="{ Component }">
-    <transition name="slide-right">
+    <transition name="slide-left">
       <component :is="Component" />
     </transition>
   </router-view>
@@ -147,5 +147,58 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all 0.75s ease-out;
+}
+.slide-left-enter-to {
+  position: absolute;
+  right: 0;
+}
+.slide-left-enter-from {
+  position: absolute;
+  right: -100%;
+}
+.slide-left-leave-to {
+  position: absolute;
+  left: -100%;
+}
+.slide-left-leave-from {
+  position: absolute;
+  left: 0;
+}
+/*----------------------*/
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: all 0.75s ease-out;
+}
+.slide-right-enter-to {
+  position: absolute;
+  left: 0;
+}
+.slide-right-enter-from {
+  position: absolute;
+  left: -100%;
+}
+.slide-right-leave-to {
+  position: absolute;
+  right: -100%;
+}
+.slide-right-leave-from {
+  position: absolute;
+  right: 0;
+}
+/*----------------------*/
+.fade-enter-active {
+  transition: all 0.8s ease-in-out;
+} 
+.fade-leave-active {
+  transition: all 1s ease-in-out;
+  } 
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateZ(100px);
+  opacity: 0;
 }
 </style>

@@ -91,12 +91,14 @@ export default {
         if (direction == "right") {
           router.push({
             name: "second_step",
+            params: { result: 32 },
           });
         }
 
         if (direction == "left") {
           router.push({
             name: "second_step",
+            params: { result: 0 },
           });
         }
       };
