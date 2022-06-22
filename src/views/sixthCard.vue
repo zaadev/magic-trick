@@ -1,7 +1,6 @@
 <template>  
   <div v-touch:swipe="onSwipeItem()" class="shadow-lg p-10 rounded">
     <p class="text-right">7/7</p>
-    <p v-show="false" id="FifthCardResult">{{ $route.params.result }}</p>    
     <p class="text-5xl font-bold mb-9 text-center">Do you see your number?</p>
     <p class="font-bold mb-9 text-center">Swipe right for yes, left for no.</p>
 
@@ -86,22 +85,22 @@ export default {
     // handle user swipe directions
     onSwipeItem() {
       return function (direction) {
-        const previousResult    = document.getElementById('FifthCardResult').innerText;
+        const previousResult    = localStorage.getItem('finalResult');
         const nextResult        = parseInt(previousResult) + 1;
         console.log("Swiped item in direction ", direction);
 
         // if user swipe
         if (direction == "right") {
+          // set new result
+          localStorage.setItem('finalResult', nextResult);
           router.push({
-            name: "final_result",
-            params: { result: nextResult },
+            name: "final_result",            
           });
         }
 
         if (direction == "left") {
           router.push({
-            name: "final_result",
-            params: { result: previousResult },
+            name: "final_result",            
           });
         }
       };

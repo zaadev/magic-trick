@@ -21,32 +21,32 @@ const routes = [
     component: FirstStep
   },
   {
-    path: '/second-step/:result',
+    path: '/second-step',
     name: 'second_step',
     component: SecondStep
   },
   {
-    path: '/third-step/:result',
+    path: '/third-step',
     name: 'third_step',
     component: ThirdStep
   },
   {
-    path: '/fourth-step/:result',
+    path: '/fourth-step',
     name: 'fourth_step',
     component: FourthStep
   },
   {
-    path: '/fifth-step/:result',
+    path: '/fifth-step',
     name: 'fifth_step',
     component: FifthStep
   },
   {
-    path: '/sixth-step/:result',
+    path: '/sixth-step',
     name: 'sixth_step',
     component: SixthStep
   },
   {
-    path: '/final-result/:result',
+    path: '/final-result',
     name: 'final_result',
     component: FinalResult
   }

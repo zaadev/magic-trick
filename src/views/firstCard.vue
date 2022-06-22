@@ -89,16 +89,19 @@ export default {
 
         // if user swipe
         if (direction == "right") {
+          // set new result
+          localStorage.setItem('finalResult', 32);
           router.push({
-            name: "second_step",
-            params: { result: 32 },
+            name: "second_step",            
           });
         }
 
         if (direction == "left") {
+
+          localStorage.setItem('finalResult', 0);
+
           router.push({
-            name: "second_step",
-            params: { result: 0 },
+            name: "second_step",            
           });
         }
       };
