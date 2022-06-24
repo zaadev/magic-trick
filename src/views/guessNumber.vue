@@ -38,7 +38,7 @@
       </h2>
 
       <div class="holder">
-        <div class="block" v-for="item in flavorList" :key="item.id">
+        <div class="block" v-for="item in randomList(flavorList)" :key="item.id">
           <div class="image">
             <img
               :src="'./images/flavors/' + item.id + '.png'"
@@ -65,6 +65,10 @@ export default {
         name: "first_step",
       });
     },
+    // make array indexes randomize
+    randomList: function(rand){      
+      return rand.sort(() => Math.random() - 0.5);
+    }
   },
   data() {
     return {

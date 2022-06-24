@@ -15,11 +15,15 @@
     <div class="main-section">
       <div class="head">
         <h1>Do you see your flavor?</h1>
-        <span class="count">1/6</span>
+        <span class="count">4/6</span>
       </div>
 
       <div class="flavor-box">
-        <div class="block" v-for="item in flavorList" :key="item.id">
+        <div
+          class="block"
+          v-for="item in randomList(flavorList)"
+          :key="item.id"
+        >
           <div class="image">
             <img
               :src="'./images/flavors/' + item.id + '.png'"
@@ -32,7 +36,7 @@
 
       <div class="head">
         <h1>Do you see your flavor?</h1>
-        <span class="count">1/6</span>
+        <span class="count">4/6</span>
       </div>
       <div class="button-holder">
         <button v-on:click="nextStep(0)" type="button" class="btn btn-action">
@@ -79,7 +83,6 @@ export default {
         }
       };
     },
-
     // forward to next step with saving result
     nextStep(result) {
       const previousResult = localStorage.getItem("finalResult");
@@ -90,6 +93,10 @@ export default {
       router.push({
         name: "fifth_step",
       });
+    },
+    // make array indexes randomize
+    randomList: function (rand) {
+      return rand.sort(() => Math.random() - 0.5);
     },
   },
   data() {
