@@ -1,79 +1,53 @@
-<template>  
-  <div v-touch:swipe="onSwipeItem()" class="shadow-lg p-10 rounded">
-    <p class="text-right">7/7</p>
-    <p class="text-5xl font-bold mb-9 text-center">Do you see your number?</p>
-    <p class="font-bold mb-9 text-center">Swipe right for yes, left for no.</p>
+<template>
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="location"><span class="icon-map-marker-light"></span></a>
+    <div class="logo">
+      <a href="#"><img src="images/logo.svg" alt="Rita's" /></a>
+    </div>
+    <span class="menu-opener"
+      ><img src="images/arrow-up-from-bracket-solid.svg" class="share-button"
+    /></span>
+  </header>
 
-    <div
-      class="
-        text-center
-        w-full
-        text-2xl
-        p-2
-        border-2
-        rounded
-        border-green-300
-        mt-4
-        mb-4
-      "
-    >
-      <div class="grid grid-cols-4 gap-4">
-        <div>01</div>
-        <div>03</div>
-        <div>05</div>
-        <div>07</div>
+  <!-- Main content -->
+  <main class="main">
+    <div class="main-section">
+      <div class="head">
+        <h1>Do you see your flavor?</h1>
+        <span class="count">1/6</span>
       </div>
 
-      <div class="grid grid-cols-4 gap-4">
-        <div>09</div>
-        <div>11</div>
-        <div>13</div>
-        <div>15</div>
+      <div class="flavor-box">
+        <div class="block" v-for="item in flavorList" :key="item.id">
+          <div class="image">
+            <img
+              :src="'./images/flavors/' + item.id + '.png'"
+              :alt="item.name"
+            />
+          </div>
+          <span class="text"> {{ item.name }} </span>
+        </div>
       </div>
 
-      <div class="grid grid-cols-4 gap-4">
-        <div>17</div>
-        <div>19</div>
-        <div>21</div>
-        <div>23</div>
+      <div class="head">
+        <h1>Do you see your flavor?</h1>
+        <span class="count">1/6</span>
       </div>
-
-      <div class="grid grid-cols-4 gap-4">
-        <div>25</div>
-        <div>27</div>
-        <div>29</div>
-        <div>31</div>
-      </div>
-
-      <div class="grid grid-cols-4 gap-4">
-        <div>33</div>
-        <div>35</div>
-        <div>37</div>
-        <div>39</div>
-      </div>
-
-      <div class="grid grid-cols-4 gap-4">
-        <div>41</div>
-        <div>43</div>
-        <div>45</div>
-        <div>47</div>
-      </div>
-
-      <div class="grid grid-cols-4 gap-4">
-        <div>49</div>
-        <div>51</div>
-        <div>53</div>
-        <div>55</div>
-      </div>
-
-      <div class="grid grid-cols-4 gap-4">
-        <div>57</div>
-        <div>59</div>
-        <div>61</div>
-        <div>63</div>
+      <div class="button-holder">
+        <button v-on:click="nextStep(0)" type="button" class="btn btn-action">
+          No
+        </button>
+        <button
+          v-on:click="nextStep(1)"
+          type="button"
+          class="btn btn-action add"
+        >
+          Yes
+        </button>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -85,26 +59,76 @@ export default {
     // handle user swipe directions
     onSwipeItem() {
       return function (direction) {
-        const previousResult    = localStorage.getItem('finalResult');
-        const nextResult        = parseInt(previousResult) + 1;
+        const previousResult = localStorage.getItem("finalResult");
+        const nextResult = parseInt(previousResult) + 1;
         console.log("Swiped item in direction ", direction);
 
         // if user swipe
         if (direction == "right") {
           // set new result
-          localStorage.setItem('finalResult', nextResult);
+          localStorage.setItem("finalResult", nextResult);
           router.push({
-            name: "final_result",            
+            name: "final_result",
           });
         }
 
         if (direction == "left") {
           router.push({
-            name: "final_result",            
+            name: "final_result",
           });
         }
       };
     },
+
+    // forward to next step with saving result
+    nextStep(result) {
+      const previousResult = localStorage.getItem("finalResult");
+      const nextResult = parseInt(previousResult) + parseInt(result);
+
+      localStorage.setItem("finalResult", nextResult);
+
+      router.push({
+        name: "final_result",
+      });
+    },
+  },
+  data() {
+    return {
+      flavorList: [
+        { id: "1", name: "Banana" },
+        { id: "3", name: "Blueberry" },
+        { id: "5", name: "Cheesecake" },
+        { id: "7", name: "Cherry Limeade" },
+        { id: "9", name: "Chocolate Chip Cheesecake" },
+        { id: "11", name: "Chocolate Peanut Butter" },
+        { id: "13", name: "Cookie Dough" },
+        { id: "15", name: "Florida Orange" },
+        { id: "17", name: "Georgia Peach" },
+        { id: "19", name: "Guava Passionfruit" },
+        { id: "21", name: "Juicy Pear" },
+        { id: "23", name: "Mango Peach" },
+        { id: "25", name: "Margarita" },
+        { id: "27", name: "Mojito" },
+        { id: "29", name: "Pina Colada" },
+        { id: "31", name: "Pumpkin Cheesecake" },
+        { id: "33", name: "S'mores" },
+        { id: "35", name: "Sour Patch Kids Red" },
+        { id: "37", name: "Strawberry" },
+        { id: "39", name: "Strawberry Cheesecake" },
+        { id: "41", name: "Strawberry Lemonade" },
+        { id: "43", name: "Strawberry Watermelon" },
+        { id: "45", name: "Sugar-Free Dragon Fruit" },
+        { id: "47", name: "Tropical Daiquiri" },
+        { id: "49", name: "Vanilla" },
+        { id: "51", name: "Watermelon Chip" },
+        { id: "53", name: "Zombie's Blood" },
+        { id: "55", name: "Lemon" },
+        { id: "57", name: "Blue Raspberry" },
+        { id: "59", name: "Cotton Candy" },
+        { id: "61", name: "Ocean Splash" },
+        { id: "63", name: "Mango" },
+      ],
+    };
   },
 };
 </script>

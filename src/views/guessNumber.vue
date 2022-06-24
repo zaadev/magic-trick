@@ -37,15 +37,16 @@
         then hit <span>start</span>.
       </h2>
 
-      <div class="holder">     
-
+      <div class="holder">
         <div class="block" v-for="item in flavorList" :key="item.id">
-          <div class="image">            
-            <img :src="'./images/flavors/' + item.id + '.png'" :alt="item.name" />
+          <div class="image">
+            <img
+              :src="'./images/flavors/' + item.id + '.png'"
+              :alt="item.name"
+            />
           </div>
-          <span class="text"> {{item.name}} </span>
+          <span class="text"> {{ item.name }} </span>
         </div>
-
       </div>
 
       <button type="button" v-on:click="startGame()" class="btn btn-start">
@@ -133,6 +134,9 @@ export default {
         { id: "63", name: "Mango" },
       ],
     };
+  },
+  created() {
+    localStorage.removeItem("finalResult");
   },
 };
 </script>
