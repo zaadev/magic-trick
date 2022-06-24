@@ -140,17 +140,9 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 .slide-left-enter-active,
 .slide-left-leave-active {
-  transition: all 0.75s ease-out;
+  transition: all 0.55s ease-out;
 }
 .slide-left-enter-to {
   position: absolute;
@@ -171,7 +163,7 @@ export default {
 /*----------------------*/
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: all 0.75s ease-out;
+  transition: all 0.55s ease-out;
 }
 .slide-right-enter-to {
   position: absolute;
